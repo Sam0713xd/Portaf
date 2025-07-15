@@ -1,53 +1,209 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio - Simon Rodriguez Taborda</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
-    <h1>Simon Rodriguez Taborda</h1>
-    <p>Técnico en Análisis de Datos</p>
-  </header>
+ <div className="flex flex-col min-h-dvh bg-background text-foreground">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 max-w-5xl items-center justify-between">
+          <a href="#" className="font-bold text-lg tracking-tight">
+            Simon Rodriguez Taborda
+          </a>
+          <nav className="hidden md:flex items-center gap-2">
+            <Button variant="link" asChild><a href="#about">Sobre mí</a></Button>
+            <Button variant="link" asChild><a href="#projects">Proyectos</a></Button>
+            <Button variant="link" asChild><a href="#comments">Comentarios</a></Button>
+            <Button variant="link" asChild><a href="#contact">Contacto</a></Button>
+          </nav>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://github.com/simon-rt" target="_blank" rel="noopener noreferrer" aria-label="Github">
+                <Github className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://linkedin.com/in/simon-rt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://twitter.com/simon-rt" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <Twitter className="h-5 w-5" />
+              </a>
+            </Button>
+            <ThemeToggle />
+          </div>
+        </div>
+      </header>
 
-  <section class="about">
-    <h2>Sobre mí</h2>
-    <p>Soy un estudiante técnico apasionado por los datos, con habilidades en análisis, visualización y herramientas estadísticas. Me interesa aplicar el conocimiento en proyectos reales y seguir aprendiendo.</p>
-  </section>
+      <main className="flex-1">
+        <div className="container max-w-5xl py-12 md:py-20">
+          <section className="text-center mb-20 md:mb-28">
+            <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Simon Rodriguez Taborda
+            </h1>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+              Un aspirante a desarrollador de IA y entusiasta académico, transformando problemas complejos en soluciones elegantes a través del código y el aprendizaje automático.
+            </p>
+          </section>
 
-  <section class="skills">
-    <h2>Habilidades</h2>
-    <ul>
-      <li>Excel avanzado y Google Sheets</li>
-      <li>SQL básico</li>
-      <li>Python para análisis de datos (pandas, matplotlib)</li>
-      <li>Visualización con Power BI</li>
-      <li>Estadística descriptiva</li>
-    </ul>
-  </section>
+          <section id="about" className="mb-20 md:mb-28 scroll-mt-20">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-8 text-center">Sobre mí</h2>
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="w-48 h-48 md:w-60 md:h-60 flex-shrink-0">
+                  <Image 
+                      src="https://placehold.co/400x400.png"
+                      alt="Simon Rodriguez Taborda"
+                      width={400}
+                      height={400}
+                      className="rounded-full object-cover shadow-lg w-full h-full"
+                      data-ai-hint="portrait man"
+                  />
+              </div>
+              <div className="text-center md:text-left">
+                  <p className="text-lg text-foreground/90 leading-relaxed">
+                      Soy un estudiante apasionado y motivado con un profundo interés en la Inteligencia Artificial. Mi trayectoria en la tecnología está impulsada por el deseo de comprender y crear sistemas inteligentes que puedan resolver desafíos del mundo real. Desde el desarrollo de redes neuronales hasta la creación de experiencias de usuario intuitivas, exploro constantemente la intersección entre la tecnología y la creatividad.
+                  </p>
+              </div>
+            </div>
+          </section>
 
-  <section class="projects">
-    <h2>Proyectos</h2>
-    <div class="project">
-      <h3>Análisis de ventas escolares</h3>
-      <p>Proyecto donde se analizaron patrones de compra en una cafetería escolar utilizando Excel y gráficos.</p>
+          <section id="projects" className="mb-20 md:mb-28 scroll-mt-20">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-12 text-center">Proyectos Destacados</h2>
+            <div className="grid gap-10 md:gap-14">
+              <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="grid md:grid-cols-2">
+                      <div className="p-6 md:p-8 flex flex-col justify-center">
+                          <CardHeader className="p-0 mb-4">
+                              <Badge variant="outline" className="w-fit mb-2 border-accent text-accent">Proyecto Principal</Badge>
+                              <CardTitle className="font-headline text-3xl">DarkAiSchool</CardTitle>
+                          </CardHeader>
+                          <CardContent className="p-0">
+                              <CardDescription className="text-base mb-6">
+                                  DarkAiSchool es una plataforma de vanguardia para la educación avanzada en IA, centrada en el aprendizaje profundo, las redes neuronales y los modelos generativos. Este proyecto demuestra la capacidad de construir aplicaciones complejas basadas en datos con un enfoque en la resolución de problemas prácticos del mundo real.
+                              </CardDescription>
+                              <div className="flex flex-wrap gap-2">
+                                  <Badge>Next.js</Badge>
+                                  <Badge>TypeScript</Badge>
+                                  <Badge>Python</Badge>
+                                  <Badge>Google Cloud</Badge>
+                                  <Badge>GenAI</Badge>
+                              </div>
+                          </CardContent>
+                      </div>
+                      <div className="bg-muted flex items-center justify-center p-6">
+                          <Image 
+                              src="https://placehold.co/600x400.png"
+                              alt="Visualización Abstracta del Proyecto DarkAiSchool"
+                              width={600}
+                              height={400}
+                              className="rounded-lg object-cover shadow-md"
+                              data-ai-hint="abstract network"
+                          />
+                      </div>
+                  </div>
+              </Card>
+
+              <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="grid md:grid-cols-2">
+                      <div className="bg-muted flex items-center justify-center p-6 md:order-last">
+                          <Image 
+                              src="https://placehold.co/600x400.png"
+                              alt="Visualización Abstracta del Sistema de Detección de Anomalias"
+                              width={600}
+                              height={400}
+                              className="rounded-lg object-cover shadow-md"
+                              data-ai-hint="data charts"
+                          />
+                      </div>
+                      <div className="p-6 md:p-8 flex flex-col justify-center">
+                          <CardHeader className="p-0 mb-4">
+                              <CardTitle className="font-headline text-3xl">Sistema de Detección de Anomalías</CardTitle>
+                          </CardHeader>
+                          <CardContent className="p-0">
+                              <CardDescription className="text-base mb-6">
+                                  Este proyecto implicó la creación de un sistema de detección de anomalías en tiempo real para transacciones financieras. Utilizando modelos de aprendizaje no supervisado, el sistema identifica actividades fraudulentas con alta precisión, demostrando habilidades en preprocesamiento de datos, entrenamiento de modelos y despliegue.
+                              </CardDescription>
+                              <div className="flex flex-wrap gap-2">
+                                  <Badge>Python</Badge>
+                                  <Badge>Scikit-learn</Badge>
+                                  <Badge>Flask</Badge>
+                                  <Badge>Docker</Badge>
+                              </div>
+                          </CardContent>
+                      </div>
+                  </div>
+              </Card>
+            </div>
+          </section>
+
+          <section id="comments" className="mb-20 md:mb-28 scroll-mt-20">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-12 text-center">Comentarios</h2>
+            <div className="grid md:grid-cols-5 gap-10">
+              <div className="md:col-span-3 space-y-8">
+                {comments.map((comment, index) => (
+                  <Card key={index} className="shadow-lg">
+                    <CardContent className="p-6 flex gap-4">
+                      <Avatar>
+                        <AvatarImage src={comment.avatar} alt={comment.author} data-ai-hint="avatar person" />
+                        <AvatarFallback>{comment.author.charAt(0)}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-semibold">{comment.author}</p>
+                        <p className="text-muted-foreground text-sm">{comment.text}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="md:col-span-2">
+                <Card className="shadow-lg sticky top-24">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <MessageSquare className="h-6 w-6 text-primary" />
+                      Deja un comentario
+                    </CardTitle>
+                    <CardDescription>
+                      Comparte tu opinión sobre mi trabajo o deja un saludo.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <form className="space-y-4">
+                      <Input placeholder="Tu nombre" />
+                      <Textarea placeholder="Tu comentario..." />
+                      <Button className="w-full">
+                        <Send className="mr-2 h-4 w-4" /> Enviar comentario
+                      </Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" className="mb-12 md:mb-20 scroll-mt-20">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold mb-8 text-center">Contacto</h2>
+            <Card className="max-w-lg mx-auto shadow-lg">
+                <CardHeader>
+                    <CardTitle>Ponte en contacto</CardTitle>
+                    <CardDescription>
+                        Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <a href="mailto:simon.rt@example.com" className="flex items-center gap-4 p-2 rounded-md hover:bg-muted transition-colors">
+                        <Mail className="h-6 w-6 text-primary"/>
+                        <span className="text-foreground/90">simon.rt@example.com</span>
+                    </a>
+                    <a href="tel:+123456789" className="flex items-center gap-4 p-2 rounded-md hover:bg-muted transition-colors">
+                        <Phone className="h-6 w-6 text-primary"/>
+                        <span className="text-foreground/90">+1 (234) 567-890</span>
+                    </a>
+                </CardContent>
+            </Card>
+          </section>
+
+        </div>
+      </main>
+      
+      <footer className="border-t">
+        <div className="container max-w-5xl py-6 text-center text-muted-foreground text-sm">
+            <p>&copy; {new Date().getFullYear()} Simon Rodriguez Taborda. Todos los derechos reservados.</p>
+        </div>
+      </footer>
     </div>
-    <div class="project">
-      <h3>Informe de notas académicas</h3>
-      <p>Uso de Python para limpiar y visualizar datos de rendimiento de estudiantes en distintas materias.</p>
-    </div>
-  </section>
-
-  <section class="contact">
-    <h2>Contacto</h2>
-    <p>Email: simon.taborda@ejemplo.com</p>
-    <p>Teléfono: +57 312 000 0000</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Simon Rodriguez Taborda</p>
-  </footer>
-</body>
-</html>
